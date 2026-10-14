@@ -30,8 +30,10 @@
 <h2>What stays on your device</h2>
 <p>Your scripts and text are stored locally on your device using Apple's SwiftData framework. They are never uploaded to any server, except when you choose to use an AI feature (see below). Video recordings are kept in the app on your device and saved to your Photo Library when you choose to; the video itself is never uploaded. The only exception for sound is Studio Sound (see below): if you use it, the audio track of that recording is sent for processing. Speech recognition for the voice-tracking feature runs entirely on-device using Apple's Speech framework — that audio never leaves your device. Chat history is also cached locally as a JSON file in your app's documents directory.</p>
 
-<h2>AI script optimization</h2>
-<p>When you use the "Optimize for Reading" feature, your script text is sent to the Anthropic Claude API for processing. The text is used solely to format your script for teleprompter use and is not stored by us. Anthropic processes this data under their own privacy policy, available at <a href="https://www.anthropic.com/privacy">anthropic.com/privacy</a>.</p>
+<h2>AI features</h2>
+<p>SteadyEye's AI features are "Optimize for Reading", writing a script from a topic, and splitting an imported document into scripts. When you use one, the text involved (your script, topic or document) is sent to our server, which passes it to the Anthropic Claude API and returns the result to you. Anthropic processes this data under their own privacy policy, available at <a href="https://www.anthropic.com/privacy">anthropic.com/privacy</a>.</p>
+<p>To improve these features, our server keeps a copy of the text sent and the text returned for up to 90 days, after which it is deleted automatically. This copy is not linked to you: it is stored without your app identifier and without your IP address, alongside only the feature used, whether you were subscribed, the app's language and the app version.</p>
+<p>To enforce usage limits, our server also keeps a record of each AI request: your anonymous app identifier, your IP address, the feature used, the length of the text and when it was made. This record contains no text.</p>
 
 <h2>Studio Sound (audio enhancement)</h2>
 <p>Studio Sound removes background noise and echo from a recording and evens out the voice. It runs only when you tap the Studio Sound button on a recording, after a one-time explanation in the app.</p>
@@ -46,8 +48,10 @@
 <p>Messages are forwarded to the founder's Telegram account for response. Replies are routed back to your device. The data is used solely to provide direct customer support and improve the app — it is not sold, shared, or used for advertising. Optionally, you may provide an email address for reply notifications; if you choose to do so, that email is associated with your anonymous identifier on our server.</p>
 <p>The backend is hosted on Railway. Telegram processes message routing under their own privacy policy, available at <a href="https://telegram.org/privacy">telegram.org/privacy</a>.</p>
 
-<h2>Analytics</h2>
-<p>SteadyEye uses Firebase Analytics (Google Analytics 4) for anonymous, aggregated usage analytics. Analytics events are linked to a Firebase-generated app instance ID, not to your personal identity. No personal information is collected. Firebase's privacy policy is available at <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.</p>
+<h2>Analytics and crash reports</h2>
+<p>SteadyEye uses Firebase Analytics (Google Analytics 4) for anonymous, aggregated usage analytics. Analytics events are linked to a Firebase-generated app instance ID, not to your personal identity. No personal information is collected.</p>
+<p>SteadyEye uses Firebase Crashlytics to receive a report when the app crashes or hits a serious error: what went wrong in the code, plus the device model, iOS version and app version. Crash reports are used only to fix bugs and are not linked to your identity.</p>
+<p>Firebase's privacy policy is available at <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.</p>
 
 <h2>Attribution</h2>
 <p>SteadyEye integrates with Apple Search Ads through Apple's AdServices framework to attribute installs from Apple Search Ads campaigns. This uses Apple's privacy-preserving framework and does not collect personal information. Subscription events may be shared with RevenueCat for attribution and analytics.</p>
@@ -64,11 +68,11 @@
 
 <h2>Data retention</h2>
 <p>Local data (scripts, recordings, chat cache) is stored on your device. When you delete the app, all local data is removed.</p>
-<p>Studio Sound usage records (no audio, see above) are kept to enforce usage limits; you may request their deletion the same way as chat data.</p>
+<p>Studio Sound usage records (no audio) and AI request records (no text) are kept to enforce usage limits. The copies of AI texts described above are deleted automatically after 90 days.</p>
 <p>Server-side chat messages and the associated anonymous identifier are retained indefinitely for support history. You may request deletion of your chat data by emailing the contact address below with your anonymous user identifier (visible on request via support).</p>
 
 <h2>GDPR and CCPA</h2>
-<p>Since SteadyEye does not collect personally identifiable information, most data we handle is anonymous and not subject to standard data subject requests. For chat data tied to your anonymous identifier, you may request access, export, or deletion by emailing the contact address below. The AI optimization feature processes text transiently and does not retain it. Studio Sound audio is processed transiently and not stored on our server; Auphonic deletes it at our request after processing.</p>
+<p>SteadyEye has no accounts and does not ask for your name. Some data we keep is still personal data under the GDPR: your anonymous app identifier, the device identifier and IP address in Studio Sound and AI request records, and your chat messages. You may request access to, export of, or deletion of this data by emailing the contact address below; include your anonymous user identifier if you can (support can tell you what it is). AI text copies are stored without any identifier, so they cannot be tied back to you; they are deleted after 90 days. Studio Sound audio is not stored on our server, and we ask Auphonic to delete it after processing.</p>
 
 <h2>Children's privacy</h2>
 <p>SteadyEye is not directed at children under 13. We do not knowingly collect data from children. If you believe a child has used the chat feature, contact us and we will delete any associated data.</p>
